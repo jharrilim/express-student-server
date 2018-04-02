@@ -1,0 +1,4 @@
+{
+    "db": "mongodb://localhost/labThree",
+    "sessionSecret": "labthr33"
+}

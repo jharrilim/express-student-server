@@ -1,0 +1,18 @@
+{
+    "displayName": "jharri50@my.centennialcollege.ca",
+    "name": "assignment1",
+    "version": "0.1.0",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "compression": "^1.7.1",
+        "ejs": "^2.5.7",
+        "express": "^4.16.2",
+        "express-session": "^1.15.6",
+        "method-override": "^2.3.10",
+        "mongoose": "^5.0.12",
+        "morgan": "^1.9.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.14.12"
+    }
+}
