@@ -1,6 +1,5 @@
-const Course = require("../../config/db/mongoose").model("Course");
+const Course = require("mongoose").model("Course");
 
-// too much code; needs inheritance
 
 module.exports.getCourses = (req, res, next) => {
     Course.find(req.query, (err, results) => {
@@ -8,6 +7,7 @@ module.exports.getCourses = (req, res, next) => {
             return next(err);
         res.json(results);
     });
+    console.log("HELLLLLLLLLLOOOOOOOOO");
 };
 
 
@@ -30,7 +30,7 @@ module.exports.createCourse = (req, res, next) => {
 
 
 module.exports.upsertCourse = (req, res, next) => {
-    Course.findOneAndUpdate({ courseCode: req.params.courseCode }, 
+    Course.findOneAndUpdate({ courseCode: req.params.courseCode },
         req.body,
         { upsert: true, new: true },
         (err, result) => {
@@ -42,7 +42,8 @@ module.exports.upsertCourse = (req, res, next) => {
 
 
 module.exports.deleteCourse = (req, res, next) => {
-    Course.findOneAndRemove({ courseCode: req.params.courseCode }, (err, result) => {
+    Course.findOneAndRemove({ courseCode: req.params.courseCode },
+      (err, result) => {
         if (err)
             return next(err);
         res.json(result);
@@ -52,5 +53,3 @@ module.exports.deleteCourse = (req, res, next) => {
 module.exports.updateCourse = (req, res, next) => {
     return next(new Error("not implemented"));
 };
-
-   

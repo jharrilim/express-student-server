@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 /**
- * @returns {mongoose}
+ * @returns {Connection}
  */
 module.exports = () => {
 
