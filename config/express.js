@@ -31,7 +31,7 @@ class Server {
     const course = require("../app/routes/courseRoutes");
     const student = require("../app/routes/studentRoutes");
     this.app.use("/api/courses", course);
-    this.app.use("/api/signups", student);
+    this.app.use("/api/students", student);
     this.app.use(this.errorHandler);
     return this.app;
   }

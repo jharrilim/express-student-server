@@ -7,7 +7,6 @@ module.exports.getCourses = (req, res, next) => {
             return next(err);
         res.json(results);
     });
-    console.log("HELLLLLLLLLLOOOOOOOOO");
 };
 
 
