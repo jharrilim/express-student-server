@@ -28,10 +28,14 @@ class Server {
         this.app.use(compression());
         break;
     }
+    const passport = require("./passport");
+    this.app.use(passport.initialize());
+    this.app.use(passport.session());
+
     const course = require("../app/routes/courseRoutes");
     const student = require("../app/routes/studentRoutes");
-    this.app.use("/api/courses", course);
-    this.app.use("/api/students", student);
+    this.app.use("/api/courses", passport.authenticate("local"), course);
+    this.app.use("/api/students", passport.authenticate("local"), student);
     this.app.use(this.errorHandler);
     return this.app;
   }

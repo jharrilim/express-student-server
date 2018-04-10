@@ -1,7 +1,7 @@
 const Schema = require("mongoose").Schema;
 
 let CourseSchema = new Schema({
-    courseCode: String,
+    courseCode: { type: String, unique: true, required },
     name:       String,
     section:    String,
     semester:   String,
